@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .row {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      label {
+        text-align: center;
+        text-justify: auto;
+      }
+      canvas {
+        margin: 2rem;
+        width: 40vw;
+        height: auto;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+      }
+      video {
+        margin: 2rem;
+        width: 40vw;
+        height: auto;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+      }
+      div.center {
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: auto;
+      }
+      .inactive {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Nguyễn Tuấn Kiệt - 21127088 </h3>
+    <div class="center">
+      <div class="center row">
+        <video id="video" width="320" height="240" controls>
+          <source src="/HW05.mp4" type="video/mp4">
+        </video>
+        <canvas id="preprocess" class="inactive">
+          Unsupported canvas, try updating your browser or using other browser
+        </canvas>
+        <canvas id="processed">
+          Unsupported canvas, try updating your browser or using other browser
+        </canvas>
+      </div>
+      <div class="row slidecontainer">
+        <label for="threshold">Threshold: </label>
+        <input
+          type="range"
+          min="1"
+          max="300"
+          value="40"
+          class="slider"
+          id="threshold"
+        />
+        <p id="threshold-value">40</p>
+      </div>
+    </div>
+  </body>
+  <script src="gradient.js"></script>
+  <script src="draw.js"></script>
+</html>
