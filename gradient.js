@@ -44,11 +44,11 @@ function process(image, threshold) {
 }
 function extractboundbyoper(image, kernelsize)
 {
-   
+    const size = image.width * image.height;
     var data = image.data;
     var arrdilate = [];
     var arrerode = [];
-    for (var i =0;i<data.length;i+=4)
+    for (var i =0;i<size;i+=4)
     {
         if (i == kernelsize*kernelsize*4)
             {
