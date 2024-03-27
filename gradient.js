@@ -42,7 +42,36 @@ function process(image, threshold) {
 
   return image;
 }
-
+function extractboundbyoper(image, kernelsize)
+{
+   
+    var data = image.data;
+    var arrdilate = [];
+    var arrerode = [];
+    for (var i =0;i<data.length;i+=4)
+    {
+        if (i == kernelsize*kernelsize*4)
+            {
+                var maxnumber = Math.max(arrdilate);
+                var minnumber = Math.min(arrerode);
+                var boundary = maxnumber - minnumber;
+                var limit = i-kernelsize*kernelsize*4;
+                for (var j =i;j>limit;j-=4)
+                {
+                    data[j] =   boundary
+                    data[j+1] = boundary
+                    data[j+2] = boundary
+                }        
+            }
+    
+        var valuedilate = (data[i] +data[i+1]+data[i+2])/3 + 1;
+        var valueerode = (data[i] +data[i+1]+data[i+2])/3 - 1;
+        arrdilate.push(valuedilate);
+        arrerode.push(valueerode);
+    
+    }
+    return data;
+}
 /**
  * @argument {[number]} data
  * @argument {[[number]]} kernel
