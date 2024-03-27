@@ -70,7 +70,7 @@ function extractboundbyoper(image, kernelsize)
         arrerode.push(valueerode);
     
     }
-    return data;
+    return image;
 }
 /**
  * @argument {[number]} data
