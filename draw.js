@@ -26,7 +26,7 @@ function draw() {
 
   inContext.drawImage(video, 0, 0, width, height);
   let image = inContext.getImageData(0, 0, width, height);
-  image = extractboundbyoper(image, 3);
+  image = process(image, threshold.value);
   outContext.putImageData(image, 0, 0);
 
   if (video.paused || video.ended) return false;
