@@ -58,10 +58,12 @@ function extractboundbyoper(image, kernelsize)
                 var limit = i-kernelsize*kernelsize*4;
                 for (var j =i;j>limit;j-=4)
                 {
-                    data[j] =   boundary
-                    data[j+1] = boundary
-                    data[j+2] = boundary
-                }        
+                    data[j] =   boundary;
+                    data[j+1] = boundary;
+                    data[j+2] = boundary;
+                }  
+		arrdilate = [];
+		arrerode = [];   
             }
     
         var valuedilate = (data[i] +data[i+1]+data[i+2])/3 + 1;
